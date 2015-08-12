@@ -23,66 +23,87 @@ namespace WorkNotification.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string MondayWorkingHours {
             get {
                 return ((string)(this["MondayWorkingHours"]));
             }
+            set {
+                this["MondayWorkingHours"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string TuesdayWorkingHours {
             get {
                 return ((string)(this["TuesdayWorkingHours"]));
             }
+            set {
+                this["TuesdayWorkingHours"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string WednesdayWorkingHours {
             get {
                 return ((string)(this["WednesdayWorkingHours"]));
             }
+            set {
+                this["WednesdayWorkingHours"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ThursdayWorkingHours {
             get {
                 return ((string)(this["ThursdayWorkingHours"]));
             }
+            set {
+                this["ThursdayWorkingHours"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string FridayWorkingHours {
             get {
                 return ((string)(this["FridayWorkingHours"]));
             }
+            set {
+                this["FridayWorkingHours"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SaturdayWorkingHours {
             get {
                 return ((string)(this["SaturdayWorkingHours"]));
             }
+            set {
+                this["SaturdayWorkingHours"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SundayWorkingHours {
             get {
                 return ((string)(this["SundayWorkingHours"]));
+            }
+            set {
+                this["SundayWorkingHours"] = value;
             }
         }
     }

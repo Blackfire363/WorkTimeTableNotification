@@ -33,8 +33,9 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuNotificationTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.restoreApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_testbubble = new System.Windows.Forms.Button();
+            this.btn_seehours = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.btn_savehours = new System.Windows.Forms.Button();
             this.btn_hidescreen = new System.Windows.Forms.Button();
             this.txtbox_information = new System.Windows.Forms.RichTextBox();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.contextMenuNotificationTray.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,9 +70,10 @@
             // 
             this.contextMenuNotificationTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.restoreApplicationToolStripMenuItem,
+            this.checkHoursToolStripMenuItem,
             this.closeApplicationToolStripMenuItem});
             this.contextMenuNotificationTray.Name = "contextMenuNotificationTray";
-            this.contextMenuNotificationTray.Size = new System.Drawing.Size(178, 48);
+            this.contextMenuNotificationTray.Size = new System.Drawing.Size(178, 70);
             // 
             // restoreApplicationToolStripMenuItem
             // 
@@ -79,6 +82,13 @@
             this.restoreApplicationToolStripMenuItem.Text = "Restore Application";
             this.restoreApplicationToolStripMenuItem.Click += new System.EventHandler(this.restoreApplicationToolStripMenuItem_Click);
             // 
+            // checkHoursToolStripMenuItem
+            // 
+            this.checkHoursToolStripMenuItem.Name = "checkHoursToolStripMenuItem";
+            this.checkHoursToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.checkHoursToolStripMenuItem.Text = "Check Hours";
+            this.checkHoursToolStripMenuItem.Click += new System.EventHandler(this.checkHoursToolStripMenuItem_Click);
+            // 
             // closeApplicationToolStripMenuItem
             // 
             this.closeApplicationToolStripMenuItem.Name = "closeApplicationToolStripMenuItem";
@@ -86,15 +96,15 @@
             this.closeApplicationToolStripMenuItem.Text = "Close Application";
             this.closeApplicationToolStripMenuItem.Click += new System.EventHandler(this.closeApplicationToolStripMenuItem_Click);
             // 
-            // btn_testbubble
+            // btn_seehours
             // 
-            this.btn_testbubble.Location = new System.Drawing.Point(345, 26);
-            this.btn_testbubble.Name = "btn_testbubble";
-            this.btn_testbubble.Size = new System.Drawing.Size(75, 23);
-            this.btn_testbubble.TabIndex = 2;
-            this.btn_testbubble.Text = "Bubble Text";
-            this.btn_testbubble.UseVisualStyleBackColor = true;
-            this.btn_testbubble.Click += new System.EventHandler(this.btn_testbubble_Click);
+            this.btn_seehours.Location = new System.Drawing.Point(345, 26);
+            this.btn_seehours.Name = "btn_seehours";
+            this.btn_seehours.Size = new System.Drawing.Size(75, 23);
+            this.btn_seehours.TabIndex = 2;
+            this.btn_seehours.Text = "See Hours";
+            this.btn_seehours.UseVisualStyleBackColor = true;
+            this.btn_seehours.Click += new System.EventHandler(this.btn_seehours_Click);
             // 
             // label2
             // 
@@ -240,18 +250,29 @@
             // 
             // txtbox_information
             // 
-            this.txtbox_information.Location = new System.Drawing.Point(184, 54);
+            this.txtbox_information.Location = new System.Drawing.Point(183, 54);
             this.txtbox_information.Name = "txtbox_information";
             this.txtbox_information.ReadOnly = true;
-            this.txtbox_information.Size = new System.Drawing.Size(236, 150);
+            this.txtbox_information.Size = new System.Drawing.Size(533, 150);
             this.txtbox_information.TabIndex = 20;
             this.txtbox_information.Text = resources.GetString("txtbox_information.Text");
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(426, 25);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(75, 23);
+            this.btn_reset.TabIndex = 21;
+            this.btn_reset.Text = "Reset";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 217);
+            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.txtbox_information);
             this.Controls.Add(this.btn_hidescreen);
             this.Controls.Add(this.btn_savehours);
@@ -270,13 +291,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btn_testbubble);
+            this.Controls.Add(this.btn_seehours);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Working Timetable";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.contextMenuNotificationTray.ResumeLayout(false);
@@ -291,7 +313,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuNotificationTray;
         private System.Windows.Forms.ToolStripMenuItem restoreApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeApplicationToolStripMenuItem;
-        private System.Windows.Forms.Button btn_testbubble;
+        private System.Windows.Forms.Button btn_seehours;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -310,6 +332,8 @@
         private System.Windows.Forms.Button btn_savehours;
         private System.Windows.Forms.Button btn_hidescreen;
         private System.Windows.Forms.RichTextBox txtbox_information;
+        private System.Windows.Forms.ToolStripMenuItem checkHoursToolStripMenuItem;
+        private System.Windows.Forms.Button btn_reset;
     }
 }
 

@@ -2,25 +2,25 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WorkNotification.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="MondayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="MondayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="TuesdayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="TuesdayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="WednesdayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="WednesdayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ThursdayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="ThursdayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FridayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="FridayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SaturdayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="SaturdayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SundayWorkingHours" Type="System.String" Scope="Application">
+    <Setting Name="SundayWorkingHours" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
