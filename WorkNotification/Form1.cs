@@ -15,7 +15,6 @@ namespace WorkNotification
         public Form1()
         {
             InitializeComponent();
-            notifyIcon1.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,44 +27,91 @@ namespace WorkNotification
             if (FormWindowState.Minimized == WindowState)
             {
                 Hide();
-                notifyIcon1.Visible = true;
             }
         }
 
+       // Working with the notification icons context menu.
        private void restoreApplicationToolStripMenuItem_Click(object sender, EventArgs e)
        {
            this.Show();
            this.WindowState = FormWindowState.Normal;
-           notifyIcon1.Visible = false;
        }
 
        private void closeApplicationToolStripMenuItem_Click(object sender, EventArgs e)
        {
            Application.Exit();
        }
-
+       
+       // Setting all of the different buttons up to call the right methods.
        private void btn_testbubble_Click(object sender, EventArgs e)
        {
            DisplayWorkingHours();
        }
-       
-        private void DisplayWorkingHours()
-        {
-            DateTime thisDay = DateTime.Today;
-            String dayName = thisDay.DayOfWeek.ToString();
 
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.BalloonTipText = "Are you blind? The day is: " + dayName;
-            this.notifyIcon1.BalloonTipTitle = dayName;
-            this.notifyIcon1.ShowBalloonTip(30000);
+       private void btn_savehours_Click(object sender, EventArgs e)
+       {
+           SaveWorkHours();
+       }
 
-            if (dayName == "Sunday")
-            {
+       private void btn_hidescreen_Click(object sender, EventArgs e)
+       {
+           this.WindowState = FormWindowState.Minimized;
+       }
 
-            }
-            else if (dayName == "Monday")
-            {
-            }
+       // Working with all of the different methods.
+       private void SaveWorkHours()
+       {
+
+       }
+
+       private void DisplayWorkingHours()
+       {
+           DateTime thisDay = DateTime.Today;
+           String dayName = thisDay.DayOfWeek.ToString();
+
+           if (dayName == "Sunday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Monday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Monday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+           else if (dayName == "Monday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Tuesday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Tuesday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+           else if (dayName == "Tuesday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Wednesday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Wednesday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+           else if (dayName == "Wednesday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Thursday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Thursday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+           else if (dayName == "Thursday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Friday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Friday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+           else if (dayName == "Friday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Saturday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Saturday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+           else if (dayName == "Saturday")
+           {
+               this.notifyIcon1.BalloonTipText = "The hours you will be working on Sunday are: " + dayName;
+               this.notifyIcon1.BalloonTipTitle = "Sunday";
+               this.notifyIcon1.ShowBalloonTip(100000);
+           }
+         
         }
     }
 }
